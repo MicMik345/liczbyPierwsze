@@ -1,14 +1,34 @@
-// import static org.junit.jupiter.api.Assertions.assertEquals;
-
-// import org.junit.jupiter.api.Test;
+import java.util.Scanner;
 
 public class Main {
-  public static void main(String[] args) {
-    System.out.println("Hello world JPWP2!");
-  }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
-  // @Test
-  // void addition() {
-  // assertEquals(2, 1 + 1);
-  // }
+        System.out.print("Podaj liczbę: ");
+        int liczba = scanner.nextInt();
+
+        if (czyPierwsza(liczba)) {
+            System.out.println(liczba + " jest liczbą pierwszą.");
+        } else {
+            System.out.println(liczba + " nie jest liczbą pierwszą.");
+        }
+
+        scanner.close();
+    }
+
+    // Metoda sprawdzająca, czy liczba jest pierwsza
+    public static boolean czyPierwsza(int n) {
+        if (n < 2) return false; // Liczby mniejsze niż 2 nie są pierwsze
+        for (int i = 2; i <= Math.sqrt(n); i++) { // Optymalizacja √n
+            if (n % i == 0) {
+                return false; // Jeśli n jest podzielne przez i, to nie jest pierwsza
+            }
+        }
+        return true; // Jeśli nie znaleziono dzielnika, liczba jest pierwsza
+    }
 }
+
+
+
+
+  

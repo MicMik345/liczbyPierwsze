@@ -24,7 +24,7 @@ public class Main {
                 return false; // Jeśli n jest podzielne przez i, to nie jest pierwsza
             }
         }
-        return true; // Jeśli nie znaleziono dzielnika, liczba jest pierwsza
+        return true; 
     }
 }
 
